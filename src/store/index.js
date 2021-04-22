@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 const BLANK_LAYER = {
   content: "This is layer",
+  design: "",
 };
 
 export default createStore({
@@ -9,7 +10,7 @@ export default createStore({
   },
   mutations: {
     addLayer: (state) => {
-      state.layers.splice(state.layers.length,0,BLANK_LAYER);
+      state.layers.splice(state.layers.length,0,{...BLANK_LAYER});
     },
   },
   actions: {
