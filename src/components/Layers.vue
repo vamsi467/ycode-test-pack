@@ -9,14 +9,13 @@
       <div class="flex items-center leading-5 py-px">Layers</div>
     </header>
     <section>
-      <div
+      <LayerNameControl
         class="flex text-white text-xs font-medium"
         v-for="(layer, index) in layers"
         :key="index"
-      >
-        <input type="radio" name="layer" v-model="selectedLayer" />
-        <LayerNameControl :layer="layer" />
-      </div>
+        :index="index"
+        :layer="layer"
+      />
     </section>
   </aside>
 </template>

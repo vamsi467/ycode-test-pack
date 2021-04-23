@@ -9,9 +9,7 @@
       >
         <button @click="addLayer">add layer</button>
         <div ref="layers">
-          <div v-for="(layer, index) in layers" :key="index">
-            {{ layer.content }}
-          </div>
+          <Layer v-for="(layer, index) in layers" :layer="layer" :key="index" />
         </div>
       </section>
 
@@ -23,6 +21,7 @@
 <script>
 import Design from "./components/Design.vue";
 import Layers from "./components/Layers.vue";
+import Layer from "./components/Layer.vue";
 import NavBar from "./components/NavBar.vue";
 
 import { mapMutations, mapState } from "vuex";
@@ -33,6 +32,7 @@ export default {
     Design,
     NavBar,
     Layers,
+    Layer,
   },
   computed: {
     ...mapState(["layers"]),
